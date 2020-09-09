@@ -280,21 +280,21 @@ func TestNewProvider(t *testing.T) {
 				t.Fatalf("NewProvider(): expected error")
 			}
 
-			if p.authURL != test.wantAuthURL {
+			if p.AuthURL != test.wantAuthURL {
 				t.Errorf("NewProvider() unexpected authURL value, got=%s, want=%s",
-					p.authURL, test.wantAuthURL)
+					p.AuthURL, test.wantAuthURL)
 			}
-			if p.tokenURL != test.wantTokenURL {
+			if p.TokenURL != test.wantTokenURL {
 				t.Errorf("NewProvider() unexpected tokenURL value, got=%s, want=%s",
-					p.tokenURL, test.wantTokenURL)
+					p.TokenURL, test.wantTokenURL)
 			}
-			if p.userInfoURL != test.wantUserInfoURL {
+			if p.UserInfoURL != test.wantUserInfoURL {
 				t.Errorf("NewProvider() unexpected userInfoURL value, got=%s, want=%s",
-					p.userInfoURL, test.wantUserInfoURL)
+					p.UserInfoURL, test.wantUserInfoURL)
 			}
-			if !reflect.DeepEqual(p.algorithms, test.wantAlgorithms) {
+			if !reflect.DeepEqual(p.Algorithms, test.wantAlgorithms) {
 				t.Errorf("NewProvider() unexpected algorithms value, got=%s, want=%s",
-					p.algorithms, test.wantAlgorithms)
+					p.Algorithms, test.wantAlgorithms)
 			}
 		})
 	}

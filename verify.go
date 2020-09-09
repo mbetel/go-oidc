@@ -107,14 +107,14 @@ type Config struct {
 // The returned IDTokenVerifier is tied to the Provider's context and its behavior is
 // undefined once the Provider's context is canceled.
 func (p *Provider) Verifier(config *Config) *IDTokenVerifier {
-	if len(config.SupportedSigningAlgs) == 0 && len(p.algorithms) > 0 {
+	if len(config.SupportedSigningAlgs) == 0 && len(p.Algorithms) > 0 {
 		// Make a copy so we don't modify the config values.
 		cp := &Config{}
 		*cp = *config
-		cp.SupportedSigningAlgs = p.algorithms
+		cp.SupportedSigningAlgs = p.Algorithms
 		config = cp
 	}
-	return NewVerifier(p.issuer, p.remoteKeySet, config)
+	return NewVerifier(p.Issuer, p.RemoteKeySet, config)
 }
 
 func parseJWT(p string) ([]byte, error) {

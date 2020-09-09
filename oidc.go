@@ -71,10 +71,8 @@ type Provider struct {
 	TokenURL    string
 	UserInfoURL string
 	Algorithms  []string
-
 	// Raw claims returned by the server.
-	RawClaims []byte
-
+	RawClaims    []byte
 	RemoteKeySet KeySet
 }
 
